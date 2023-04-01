@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import cookie from 'cookie'
 import { useNavigate } from "react-router-dom";
 import { TextField, Button, Container } from "@mui/material";
 
@@ -23,8 +24,8 @@ const Login = () => {
   const login = (e) => {
     e.preventDefault();
     // set cookie here
-    // set loggedIn = true and max-age = 60*1000 (one minute)
-
+    // set loggedIn = true and max-age = 60*1000
+    document.cookie = "loggedIn=true;maxAge=" + 60*1000
     navigate("/");
   };
 
